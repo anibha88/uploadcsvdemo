@@ -1,0 +1,1050 @@
+  [1m[36m (188.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (177.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20150121115339)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20150121115339)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20150121115339)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "quantity" integer, "price" decimal(5,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150121115339"]]
+  [1m[36m (192.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 17:43:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 35ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/import" for 127.0.0.1 at 2015-01-21 17:43:32 +0530
+
+ActionController::RoutingError (No route matches [GET] "/import"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.1ms)
+
+
+Started GET "/products/import" for 127.0.0.1 at 2015-01-21 17:43:44 +0530
+Processing by ProductsController#import as HTML
+  Rendered products/import.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 802ms (Views: 801.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 17:43:45 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+Processing by ProductsController#index as HTML
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 17:47:25 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+Processing by ProductsController#index as HTML
+  Rendered products/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:08 +0530
+
+
+Started GET "/products/import" for 127.0.0.1 at 2015-01-21 17:51:17 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for ProductsController):
+  actionpack (4.1.5) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/products/import" for 127.0.0.1 at 2015-01-21 17:51:21 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for ProductsController):
+  actionpack (4.1.5) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nithin/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+Processing by ProductsController#index as HTML
+  Rendered products/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 17:51:26 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 107ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:43 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:35:52 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000004577958 @tempfile=#<Tempfile:/tmp/RackMultipart20150121-23691-z6493u>, @original_filename="products.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"products.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import CSV"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "id", "name", "price", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-21 13:05:52.390455"], ["id", 1], ["name", "Guitar"], ["price", 199.99], ["quantity", 20], ["updated_at", "2015-01-21 13:05:52.390455"]]
+  [1m[35m (233.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 2[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("created_at", "id", "name", "price", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-21 13:05:52.629917"], ["id", 2], ["name", "Trumpet"], ["price", 299.99], ["quantity", 5], ["updated_at", "2015-01-21 13:05:52.629917"]]
+  [1m[35m (186.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 3[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "id", "name", "price", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-21 13:05:52.820296"], ["id", 3], ["name", "Piano"], ["price", 699.99], ["quantity", 3], ["updated_at", "2015-01-21 13:05:52.820296"]]
+  [1m[35m (196.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 4[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "id", "name", "price", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-21 13:05:53.021126"], ["id", 4], ["name", "Clarinet"], ["price", 59.99], ["quantity", 10], ["updated_at", "2015-01-21 13:05:53.021126"]]
+  [1m[35m (196.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 875ms (ActiveRecord: 815.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:35:53 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:36:40 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:14 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:50:25 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `path' for nil:NilClass):
+  app/models/product.rb:5:in `import'
+  app/controllers/products_controller.rb:7:in `import'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:50:34 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000013a8ad0 @tempfile=#<Tempfile:/tmp/RackMultipart20150121-23691-pmgl7s>, @original_filename="products.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"products.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import csv"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 1
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 1  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = 1[0m  [["name", "Tables"], ["updated_at", "2015-01-21 13:20:34.869141"]]
+  [1m[35m (172.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 2[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 2  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = 2  [["name", "Chairs"], ["updated_at", "2015-01-21 13:20:35.047375"]]
+  [1m[36m (163.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 3
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 3  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = 3[0m  [["name", "Desktop"], ["updated_at", "2015-01-21 13:20:35.215403"]]
+  [1m[35m (229.3ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 4[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 4  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = 4  [["name", "Laptops"], ["updated_at", "2015-01-21 13:20:35.456432"]]
+  [1m[36m (177.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 777ms (ActiveRecord: 746.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:50:35 +0530
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:54:25 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `path' for nil:NilClass):
+  app/models/product.rb:5:in `import'
+  app/controllers/products_controller.rb:7:in `import'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000003bff0d8 @tempfile=#<Tempfile:/tmp/RackMultipart20150121-23691-1r1jvs1>, @original_filename="products.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"products.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import csv"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 1  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "price" = ?, "updated_at" = ? WHERE "products"."id" = 1  [["price", 55555.0], ["updated_at", "2015-01-21 13:24:33.424357"]]
+  [1m[36m (216.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 2
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 2  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 3
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 3  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 4
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 4  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 233ms (ActiveRecord: 219.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:54:33 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:57:09 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `path' for nil:NilClass):
+  app/models/product.rb:5:in `import'
+  app/controllers/products_controller.rb:7:in `import'
+
+
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/nithin/.rvm/gems/ruby-2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000041c6048 @tempfile=#<Tempfile:/tmp/RackMultipart20150121-23691-1h157xu>, @original_filename="products.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"products.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import csv"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 1  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 2[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 2  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 3[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 3  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"  WHERE "products"."id" = 4[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."id" = 4  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:17 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000047662c8 @tempfile=#<Tempfile:/tmp/RackMultipart20150121-23691-1e2z7s7>, @original_filename="products.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"products.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import csv"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 1  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 2
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 2  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 3
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 3  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"  WHERE "products"."id" = 4
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = 4  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 18:57:28 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:26 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:27 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:29 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:30 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:33 +0530
+
+
+Started POST "/products/import" for 127.0.0.1 at 2015-01-21 19:02:34 +0530
+Processing by ProductsController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckWLlxey/viABReiTbATFmvhDoZNzBj12kZKk+2E3ao=", "commit"=>"Import csv"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:34 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:34 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:34 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:34 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:35 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:35 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:35 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:35 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-21 19:02:36 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-21 19:02:37 +0530
